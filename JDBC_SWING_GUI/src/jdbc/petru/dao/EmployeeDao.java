@@ -29,7 +29,7 @@ public class EmployeeDao {
 		String user = props.getProperty("user");
 		
 		conn = DriverManager.getConnection(url, user, pass);
-		System.out.println("Successfully connected to database: "+conn.getMetaData().getDatabaseProductName());
+		System.out.println("Successfully connected to database: "+conn.getMetaData().getDatabaseProductName()+" "+conn.getMetaData().getDatabaseProductVersion());
 		
 	}
 	
