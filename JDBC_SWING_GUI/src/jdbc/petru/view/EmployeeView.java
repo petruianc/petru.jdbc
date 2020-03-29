@@ -160,7 +160,10 @@ public class EmployeeView extends JFrame {
 				Employee emp = (Employee)table.getValueAt(row, EmployeeTableModel.EMPLOYEE);
 				System.out.println(emp.getFirstName()+" "+emp.getLastName());
 				boolean update = employeeDao.setUnemployed(emp, userId);
-				if(update) JOptionPane.showMessageDialog(this, "Employee Fired!","Fired!!!",JOptionPane.INFORMATION_MESSAGE);
+				if(update) {
+					JOptionPane.showMessageDialog(this, "Employee Fired!","Fired!!!",JOptionPane.INFORMATION_MESSAGE);
+					refreshEmployeeView();
+				}
 				else JOptionPane.showMessageDialog(this, "OOOps employee still working!","Error!", JOptionPane.ERROR_MESSAGE);
 			}
 		});
